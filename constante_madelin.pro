@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        linea.cpp \
+        main.cpp \
+        punto.cpp
+
+HEADERS += \
+    linea.h \
+    punto.h

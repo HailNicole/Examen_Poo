@@ -1,0 +1,16 @@
+#ifndef LINEA_H
+#define LINEA_H
+
+
+class Linea
+{
+private:
+    float d;
+    float m;
+    
+    
+public:
+    Linea();
+};
+
+#endif // LINEA_H
