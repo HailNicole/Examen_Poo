@@ -1,4 +1,5 @@
 #include "punto.h"
+#include "linea.h"
 
 int Punto::getX() const
 {
@@ -13,4 +14,10 @@ int Punto::getY() const
 Punto::Punto()
 {
 
+}
+
+Punto::Punto(int x, int y)
+{
+    this->x=x;
+    this->y=y;
 }
