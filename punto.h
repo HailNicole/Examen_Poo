@@ -1,7 +1,6 @@
 #ifndef PUNTO_H
 #define PUNTO_H
 
-#include "linea.h"
 #include <string>
 
 using namespace std;

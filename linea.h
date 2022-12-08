@@ -17,7 +17,7 @@ public:
     Linea(Punto* p1, Punto* p2);
     virtual string to_string();
     float getD() const;
-    void sacarD();
+    float getM() const;
     Punto *getP1() const;
     Punto *getP2() const;
 };

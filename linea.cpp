@@ -2,39 +2,47 @@
 #include "punto.h"
 #include "math.h"
 
+Linea::Linea(Punto *p1, Punto *p2)
+{
+    this->p1=p1;
+    this->p2=p2;
+    Num_Lineas++;
+};
+
+
+float Linea::getD() const
+{
+    float aux, aux1, aux2, aux3, d;
+    aux = p2->getX() - p1->getX();
+    aux1 = pow(aux , 2);
+    aux2 = p2->getY() - p1->getY();
+    aux3 = pow(aux2 , 2);
+    d = sqrt(aux1 + aux3);
+
+    return d;
+
+}
+
+float Linea::getM() const
+{
+    float ax, ax1, m;
+    ax = p2->getY() - p1->getY();
+    ax1 = p2->getX() - p1->getX();
+    m = ax / ax1;
+    return m;
+};
+
 Punto *Linea::getP1() const
 {
     return p1;
-}
+};
 
 Punto *Linea::getP2() const
 {
     return p2;
-}
+};
 
-Linea::Linea(Punto* p1, Punto* p2)
+string Linea::to_string()
 {
-    Num_Lineas++;
-}
-
-void Linea::sacarD()
-{
-    int x1, x2, y1, y2;
-    int aux1, aux2, aux3, aux4;
-
-    Punto p1(x1, y1);
-    Punto p2(x2, y2);
-
-    aux1=x1-x2;
-    aux2=y1-y2;
-
-    aux3=pow(aux1, 2);
-    aux4=pow(aux2, 2);
-
-    this->d=sqrt(aux3+aux4);
-}
-
-float Linea::getD() const
-{
-    return d;
-}
+    return "L" + ::to_string(this->Num_Lineas) + "[" + p1->to_string() + " - " + p2->to_string() + " , d= " + ::to_string(getD()) + ", m= " + ::to_string(getM()) + "]";
+};
